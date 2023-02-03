@@ -1,0 +1,14 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - /usr/app/node_modules
+      - .:/usr/app
+
+    ports:
+      - 80:80
+      

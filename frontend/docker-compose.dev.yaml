@@ -1,0 +1,26 @@
+version: '2'
+services:
+  web-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+
+    volumes:
+      - /usr/app/node_modules
+      - .:/usr/app
+
+    command: [ "npm", "run", "test", "--", "--coverage" ]
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+
+    volumes:
+      - /usr/app/node_modules
+      - .:/usr/app
+
+    ports:
+      - 80:3000
+
+      
