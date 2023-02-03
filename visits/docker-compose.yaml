@@ -1,0 +1,11 @@
+version: '2'
+services:
+  redis-server:
+    image: redis
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    
+    ports:
+      - 80:3000
